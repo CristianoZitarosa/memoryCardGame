@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Udacity FEND Nanodegree Project 3 Memory Game"/>
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/png" href="favicon.ico">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>The Memory Card Game</h1>
+    </div>
+
+    <section class="score-panel">
+      <ul class="stars">
+        <li class="star"></li>
+        <li class="star"></li>
+        <li class="star"></li>
+      </ul>
+      <p>
+        <span class="moves"></span> Move(s)
+      </p>
+      <div class="timer"></div>
+      <div class="restart">
+      <p><i class="fas fa-redo-alt"></i></p>
+      </div>
+    </section>
+
+    <section id="table"></section>
+
+    <section class="footer">
+      <button class="credits button">Credits</button>
+      <button class="tutorial button">Tutorial</button>
+    </section>
+
+    <div id="congratulations" class="modal centered">
+      <div class="modal-content">
+      <span class="closeCongrats">&times;</span>
+      <h1>Congratulations! &#128515;</h1>
+      <p><strong>Game completed with:</strong></p>
+      <p></p>
+      <p><strong>Time:</strong></p>
+      <p></p>
+      <p><strong>Rating:</strong>
+      <p></p>
+      <button class="playAgain button">Play Again</button>
+      </div>
+    </div>
+
+    <div id="credits" class="modal">
+      <div class="modal-content">
+      <span class="closeCredits">&times;</span>
+      <h1>Credits:</h1>
+      <article>
+        Pets, favicon, pointer and rotate screen icon designs made by <a href="http://www.freepik.com/" target="_blank"><strong>Freepik</strong></a> from <a href="https://www.flaticon.com/" target="_blank"><strong>www.flaticon.com</strong></a> distributed under the <a href="https://file000.flaticon.com/downloads/license/license.pdf" target="_blank"><strong>free license</strong></a> with attribution. This means once I attribute them to the author I am allowed to use and alter the contents.
+        Alterations made by me in this projects concern:
+        <ul>
+          <li>modifications to size and color to make the pointer;</li>
+          <li>modifications to size and color to make the favicon;</li>
+          <li>modifications to pets' size to put them on a card;</li>
+          <li>modifications to pets, added missing leg to the chicken, fixed some eyes.</li>
+        </ul>
+      </article>
+      </div>
+    </div>
+
+    <div id="tutorial" class="modal">
+      <div class="modal-content">
+      <span class="closeTutorial">&times;</span>
+      <h1>Tutorial</h1>
+      <p>
+        The game is simple to play, there are 16 couples of cards to match.
+      </p>
+      <p>
+        To restart the game, press the button <i class="fas fa-redo-alt"></i> or the button "Play Again" if you won the game.
+      </p>
+      </div>
+    </div>
+
+    <div id="rotate-screen">
+      <div class="rotate-icon"></div>
+      <h1>Please rotate your device!</h1>
+    </div>
+
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

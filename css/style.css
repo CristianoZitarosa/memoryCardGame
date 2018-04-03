@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css?family=Fascinate+Inline|Gloria+Hallelujah|Neuton');
+
+html {
+  box-sizing: content-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #afdde9;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  font-family: 'Fascinate Inline', sans-serif;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 3.1em;
+  margin: 0;
+  text-shadow: 3px 2px 2px #6b858c;
+  color: #fff;
+  font-weight: normal;
+}
+
+.score-panel {
+  display: flex;
+  font-family: 'Gloria Hallelujah', sans-serif;
+  font-size: 1.5em;
+}
+
+.score-panel li,
+.centered li {
+  display: inline-block;
+  background-image: url("../media/star.svg");
+  height: 25px;
+  width: 25px;
+}
+
+.score-panel ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+.score-panel p {
+  margin: 0;
+  padding-left: 0;
+  margin-left: 2em;
+}
+
+.timer,
+.start {
+  margin-left: 2em;
+}
+
+.restart p {
+
+  cursor: pointer;
+}
+
+.restart p:hover {
+  transform: rotate(90deg);
+  transition: 200ms linear all;
+}
+
+#table {
+  width: 550px;
+  height: 550px;
+  box-shadow: 2px 2px 5px #6a909a;
+  border-radius: 15px;
+  background-color: #fff;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  cursor: url("../media/pointer.png"), pointer;
+}
+
+.card {
+  margin: 5px;
+  position: relative;
+  transition: all .4s linear;
+  transform-style: preserve-3d;
+}
+
+.card,
+.retro,
+.front {
+  height: 125px;
+  width: 125px;
+}
+
+.retro,
+.front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.retro {
+  background: url("../media/retro.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.front {
+  transform: rotateY(180deg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.selected {
+  transform: rotateY(180deg);
+}
+
+.match .retro {
+  background: #fff !important;
+}
+
+.footer {
+  margin: 1em 2em;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  color: #5fbcd3;
+}
+
+.button {
+  display: inline-block;
+  padding: 7px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #5fbcd3;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 3px #999;
+}
+
+.button:hover {
+  background-color: #59adc2
+}
+
+.button:active {
+  background-color: #5fbcd3;
+  box-shadow: 0 3px #666;
+  transform: translateY(2px);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  font-family: 'Neuton', serif;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.centered {
+  text-align: center;
+}
+
+.centered h1 {
+  position: relative;
+  left: -110px;
+}
+
+.closeTutorial,
+.closeCredits,
+.closeCongrats {
+  color: #aaa;
+  float: right;
+  position: relative;
+  top: -36px;
+  font-size: 60px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.closeTutorial:hover,
+.closeCredits:hover,
+.closeCongrats:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+#rotate-screen {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #afdde9;
+  /* color: #fff; */
+}
