@@ -299,6 +299,15 @@ let resetSelections = function resetSelections() {
 };
 
 /**
+* @description Cleans the visibility of the stars.
+*/
+function resetStars() {
+  starsList.forEach(function(item, i) {
+    starsList[i].style.visibility = "initial";
+  });
+}
+
+/**
 * @description Event listener to restart the game.
 */
 restartBtn.addEventListener('click', restart);
@@ -308,6 +317,7 @@ restartBtn.addEventListener('click', restart);
 */
 function restart() {
   clearInterval(interval);
+  resetStars();
   cleanTable();
   startGame();
 }
