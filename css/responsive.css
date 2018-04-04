@@ -18,7 +18,7 @@
   }
 
   .restart p {
-    font-size: 30px;
+    font-size: 27px;
     position: relative;
     top: -15px;
   }
@@ -28,8 +28,8 @@
   }
 
   #table {
-    width: 325px;
-    height: 325px;
+    width: 295px;
+    height: 295px;
     border-radius: 5px;
     padding: 5px;
   }
@@ -37,8 +37,8 @@
   .card,
   .retro,
   .front {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
   }
 
   .modal-content {

@@ -53,7 +53,7 @@ body {
 .score-panel li,
 .centered li {
   display: inline-block;
-  background-image: url("../media/star.svg");
+  background-image: url("../media/other/star.svg");
   height: 25px;
   width: 25px;
 }
@@ -95,7 +95,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  cursor: url("../media/pointer.png"), pointer;
+  cursor: url("../media/other/pointer.png"), pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .card {
@@ -119,7 +120,7 @@ body {
 }
 
 .retro {
-  background: url("../media/retro.svg");
+  background: url("../media/other/retro.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

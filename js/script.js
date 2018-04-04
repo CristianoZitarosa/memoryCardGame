@@ -4,7 +4,6 @@
 * @description General declarations
 */
 const table = document.getElementById('table');
-const fragment = document.createDocumentFragment();
 let firstSelection, secondSelection, selections, previousTarget, moves;
 let delay = 1200;
 
@@ -144,12 +143,8 @@ function startGame() {
   moves = 0;
   second = 0;
   minute = 0;
-  // counter.textContent = 0;
-  fragment.textContent = 0;
-  counter.appendChild(fragment);
-  // timer.textContent = "- mins - secs";
-  fragment.textContent = "- mins - secs";
-  timer.appendChild(fragment);
+  counter.textContent = 0;
+  timer.textContent = "- mins - secs";
   shuffle();
 }
 
@@ -184,12 +179,10 @@ fullSet.forEach(function (item) {
   front.classList.add('front'); // adds the .front class
   front.style.backgroundImage = 'url(' + image + ')'; // adds the image to the front of the card
 
-  fragment.appendChild(card); // the card is appended to the fragment
+  table.appendChild(card); // the card is appended to the table
   card.appendChild(front); // front appended to the card
   card.appendChild(retro); // retro appended to the card
 });
-
-table.appendChild(fragment); // fragment is appended to the table
 }
 
 /**
@@ -314,8 +307,6 @@ restartBtn.addEventListener('click', restart);
 * @description Function to restart the game
 */
 function restart() {
-  counter.textContent = "";
-  timer.textContent = "";
   clearInterval(interval);
   cleanTable();
   startGame();
