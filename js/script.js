@@ -4,7 +4,7 @@
 * @description General declarations
 */
 const table = document.getElementById('table');
-let firstSelection, secondSelection, selections, previousTarget, moves;
+let firstSelection, secondSelection, selections, moves;
 let delay = 1200;
 
 let timer = document.querySelector('.timer');
@@ -139,7 +139,6 @@ function startGame() {
   firstSelection = '';
   secondSelection = '';
   selections = 0;
-  previousTarget = null;
   moves = 0;
   second = 0;
   minute = 0;
@@ -198,29 +197,25 @@ table.addEventListener('click', function (event) {
 
   let clicked = event.target;
 
-  if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('selected') || clicked.parentNode.classList.contains('match')) {
-    return; // prevents these elements to be event.target
-  }
-
-  if (selections < 2) {
-    if ( clicked.parentNode.classList.contains('card') && !(clicked.parentNode.classList.contains('selected')) && !(clicked.nodeName === 'SECTION') ) {
-      movesCounter(); // starts counting moves if a first click is detected undere these conditions
-    }
-    selections++;
-    previousTarget = clicked;
-    if (selections === 1) {
-      firstSelection = clicked.parentNode.dataset.name;
-      clicked.parentNode.classList.add('selected');;
-    } else {
-      secondSelection = clicked.parentNode.dataset.name;
-      clicked.parentNode.classList.add('selected');
-    }
-
-    if (firstSelection && secondSelection) { // if we have 2 selections
-      if (firstSelection === secondSelection) { // if both dataset1 equals dataset2
-        setTimeout(match, delay); // adds the .match class both of them
+  if ( clicked.parentNode.classList.contains('card') &&
+  !( clicked.parentNode.classList.contains('selected') ) &&
+  !( clicked.parentNode.classList.contains('match')) ) {
+    if (selections < 2) {
+      movesCounter(); // starts counting moves if a first click is detected under previous conditions
+      selections++;
+      if (selections === 1) {
+        firstSelection = clicked.parentNode.dataset.name;
+        clicked.parentNode.classList.add('selected');
+      } else {
+        secondSelection = clicked.parentNode.dataset.name;
+        clicked.parentNode.classList.add('selected');
       }
-      setTimeout(resetSelections, delay); // removes .selected class both cases match & nomatch
+      if (firstSelection && secondSelection) { // if we have 2 selections
+        if (firstSelection === secondSelection) { // if dataset1 equals dataset2
+          setTimeout(match, delay); // adds the .match class both of them
+        }
+        setTimeout(resetSelections, delay); // removes .selected class both cases match & nomatch
+      }
     }
   }
 });
@@ -290,7 +285,6 @@ let resetSelections = function resetSelections() {
   firstSelection = '';
   secondSelection = '';
   selections = 0;
-  previousTarget = null;
 
   let selected = document.querySelectorAll('.selected');
   selected.forEach(function (card) {
